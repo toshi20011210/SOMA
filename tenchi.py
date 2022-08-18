@@ -5,7 +5,7 @@ from PIL import ImageOps
 img = Image.open("6.png")
 
 # 画像を回転する
-img_rotate = img.rotate(90)
+img_rotate = img.rotate(270)
 
 # 回転した画像の保存
 img_rotate.save("rotated.png")
