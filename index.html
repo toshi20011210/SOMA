@@ -20,10 +20,13 @@
 
     <!------PYTHON------>
     <!--IMPORT-->
+    <!--
     <py-env>
         - pandas
         - matplotlib
     </py-env>
+    -->
+
 
 </head>
 <body>
@@ -43,17 +46,11 @@
     <!------PYTHON------>
     <div class="python">
         <py-script> <!--src="/ex.py"-->
-import matplotlib.pyplot as plt
-import pandas as pd
+from PIL import Image
 
-df = pd.DataFrame({
-    'name': ['apple', 'orange', 'banana'],
-        'store': ['store1', 'store1', 'store2'],
-        'price': [100, 120, 200],
-    })
-fig, ax = plt.subplots()
-ax.bar(df['name'], df['price'])
-pyscript.write('pyoutput', fig)
+img = Image.open("6.png")
+
+pyscript.write('pyoutput', img)
         </py-script>
     </div>
 
