@@ -7,28 +7,55 @@
     <link rel="stylesheet" href="styles.css">
     <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
     
-    <link rel="shortcut icon" href="/public/favicon.ico"> TODO favicon.cc
+    <link rel="shortcut icon" href=""> <!--TODO favicon.cc-->
 
-    SEO Search engine optimization
+    <!-- SEO Search engine optimization -->
     <title>手書きテキスト生成AI</title>
-    <meta name="description" content="TODO"> TODO
+    <meta name="description" content="TODO"> <!-- TODO -->
 
-    OGP open graph protocol 
-    <meta property="og:image" content=""> TODO fotor.com
-    <meta property="og:title" content="手書きテキスト生成AI"> TODO
-    <meta property="og:description" content=""> TODO copy from seo
+    <!-- OGP open graph protocol --> 
+    <meta property="og:image" content=""> <!-- TODO fotor.com --> 
+    <meta property="og:title" content="手書きテキスト生成AI"> <!-- TODO -->
+    <meta property="og:description" content=""> <!-- TODO copy from seo -->
+
+    <!------PYTHON------>
+    <!--IMPORT-->
+    <py-env>
+        - pandas
+        - matplotlib
+    </py-env>
 
 </head>
 <body>
-    <main class="py-5 grid gap-y-4 grid-cols-1 place-items-center">
-        <p id="title" class="text-center text-7xl"></p>
-    </main>
-    
+
+    <input type="text" name="textInput">
+    <input type="file" name="fileInput" accept="image/jpg, image/png">
+
+
+    <div id="pyoutput"></div>
+    <!--
+    <img src="" id="pyoutput">
+    -->
+    <!--
+    <h2 id="pyoutput"></h2>
+    -->
+
+    <!------PYTHON------>
     <div class="python">
-        <py-script output="title">
-            print('I love PyScript')
+        <py-script> <!--src="/ex.py"-->
+import matplotlib.pyplot as plt
+import pandas as pd
+
+df = pd.DataFrame({
+    'name': ['apple', 'orange', 'banana'],
+        'store': ['store1', 'store1', 'store2'],
+        'price': [100, 120, 200],
+    })
+fig, ax = plt.subplots()
+ax.bar(df['name'], df['price'])
+pyscript.write('pyoutput', fig)
         </py-script>
     </div>
-    
+
 </body>
 </html>
