@@ -1,0 +1,5 @@
+{
+    //"python.pythonPath": "/opt/anaconda3/python",
+    //"python.defaultInterpreterPath": "/opt/anaconda3",
+    "python.testing.autoTestDiscoverOnSaveEnabled": true
+}
